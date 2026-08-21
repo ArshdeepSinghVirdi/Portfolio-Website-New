@@ -12,7 +12,7 @@ import { useIsomorphicLayoutEffect } from '@src/hooks/useIsomorphicLayoutEffect'
 import { useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useStore } from '@src/store';
-import { useWindowSize } from '@darkroom.engineering/hamo';
+import { useWindowSize } from 'hamo';
 
 const Time = dynamic(() => import('@src/components/dom/Time'), { ssr: false });
 const GoTop = dynamic(() => import('@src/components/dom/GoTop'), { ssr: false });

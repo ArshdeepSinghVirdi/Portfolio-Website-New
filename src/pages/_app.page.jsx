@@ -15,12 +15,12 @@ import Loader from '@src/components/dom/Loader';
 import Navbar from '@src/components/dom/navbar/Index';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Scrollbar from '@src/components/dom/Scrollbar';
-import Tempus from '@darkroom.engineering/tempus';
+import Tempus from 'tempus';
 import { View } from '@react-three/drei';
 import { gsap } from 'gsap';
 import styles from '@src/pages/app.module.scss';
 import useFoucFix from '@src/hooks/useFoucFix';
-import { useFrame } from '@darkroom.engineering/hamo';
+import { useFrame } from '@src/hooks/useFrame';
 import { useIsomorphicLayoutEffect } from '@src/hooks/useIsomorphicLayoutEffect';
 import useScroll from '@src/hooks/useScroll';
 import { useShallow } from 'zustand/react/shallow';
@@ -33,9 +33,12 @@ if (typeof window !== 'undefined') {
 
   gsap.ticker.lagSmoothing(0);
   gsap.ticker.remove(gsap.updateRoot);
-  Tempus?.add((time) => {
-    gsap.updateRoot(time / 1000);
-  }, 0);
+  Tempus?.add(
+    (state) => {
+      gsap.updateRoot(state.time / 1000);
+    },
+    { priority: 0 },
+  );
 
   window.scrollTo(0, 0);
   window.history.scrollRestoration = 'manual';

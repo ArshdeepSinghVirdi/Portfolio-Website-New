@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import styles from '@src/pages/about/components/hero/styles/hero.module.scss';
 import useIsMobile from '@src/hooks/useIsMobile';
 import { useIsomorphicLayoutEffect } from '@src/hooks/useIsomorphicLayoutEffect';
-import { useWindowSize } from '@darkroom.engineering/hamo';
+import { useWindowSize } from 'hamo';
 
 function Hero() {
   const rootRef = useRef();

@@ -13,7 +13,7 @@ import useIsMobile from '@src/hooks/useIsMobile';
 import { useIsomorphicLayoutEffect } from '@src/hooks/useIsomorphicLayoutEffect';
 import { useShallow } from 'zustand/react/shallow';
 import { useStore } from '@src/store';
-import { useWindowSize } from '@darkroom.engineering/hamo';
+import { useWindowSize } from 'hamo';
 
 /* eslint-disable react/no-array-index-key */
 
