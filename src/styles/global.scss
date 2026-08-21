@@ -1,0 +1,196 @@
+@import '@src/styles/reset.scss';
+@import '@src/styles/fonts.scss';
+@import '@src/styles/colors.scss';
+@import '@src/styles/functions.scss';
+@import '@src/styles/layout.scss';
+@import '@src/styles/utils.scss';
+@import '@src/styles/fontStyle.scss';
+@import '@src/styles/scroll.scss';
+
+html {
+  font-weight: bolder;
+  font-family: var(--font-primary), sans-serif;
+
+  scrollbar-width: thin;
+  &.nav {
+    overflow: hidden;
+  }
+}
+
+main.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  max-height: 100%;
+  overflow: hidden;
+
+  > canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+  }
+}
+
+#backgroundWebGl {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  & canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+#layout::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  top: 0;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  background-image: url('/other/noise.png');
+  opacity: 0.65;
+  pointer-events: none;
+  animation: noise 1s steps(2) infinite;
+}
+
+a,
+button,
+input,
+label,
+textarea,
+select {
+  color: inherit;
+  cursor: pointer;
+}
+
+section {
+  padding-top: calc(var(--layout-columns-gap) * 2);
+  padding-bottom: calc(var(--layout-columns-gap) * 2);
+  box-shadow:
+    inset 0 calc(var(--layout-columns-gap) * 2.1) 0 0 var(--white),
+    inset calc(var(--layout-margin) * -1.05) 0 0 0 var(--white),
+    inset 0 calc(var(--layout-columns-gap) * -2.1) 0 0 var(--white),
+    inset calc(var(--layout-margin) * 1.05) 0 0 0 var(--white),
+    0 0 0 calc(var(--layout-columns-gap) * 0.045) var(--white);
+
+  background-color: transparent;
+  @include mobile {
+    box-shadow:
+      inset 0 calc(var(--layout-columns-gap) * 2.1) 0 0 var(--white),
+      inset calc(var(--layout-margin) * -1.0265) 0 0 0 var(--white),
+      inset 0 calc(var(--layout-columns-gap) * -2.1) 0 0 var(--white),
+      inset calc(var(--layout-margin) * 1.0265) 0 0 0 var(--white),
+      0 0 0 calc(var(--layout-columns-gap) * 0.04) var(--white);
+  }
+}
+
+main > div > section:nth-last-child(1) {
+  border-bottom-left-radius: var(--layout-columns-gap);
+  border-bottom-right-radius: var(--layout-columns-gap);
+  @include mobile {
+    border-bottom-left-radius: calc(var(--layout-columns-gap) * 0.5);
+    border-bottom-right-radius: calc(var(--layout-columns-gap) * 0.5);
+  }
+}
+
+.trigger-footer {
+  height: 10px;
+  width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body, 
+  a, 
+  button, 
+  [role="button"], 
+  input, 
+  select, 
+  textarea {
+    cursor: none !important;
+  }
+
+  .custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--black);
+    border-radius: 50%;
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate3d(-100px, -100px, 0);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    mix-blend-mode: normal;
+  }
+
+  .custom-cursor-trail {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(18, 24, 36, 0.18);
+    border-radius: 50%;
+    position: fixed;
+    top: -16px;
+    left: -16px;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate3d(-100px, -100px, 0);
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+    filter: blur(1.5px);
+    box-shadow: 0 0 8px rgba(18, 24, 36, 0.08);
+  }
+
+  .custom-cursor-dot.cursor-hover {
+    width: 4px;
+    height: 4px;
+    background-color: var(--black);
+  }
+
+  .custom-cursor-trail.trail-hover {
+    width: 52px;
+    height: 52px;
+    top: -26px;
+    left: -26px;
+    background-color: rgba(18, 24, 36, 0.28);
+    box-shadow: 0 0 12px rgba(18, 24, 36, 0.12);
+  }
+}
+
+h1, h2, h3, h4, h5, h6, strong, b, .bold, .wordmark {
+  color: #1A365D !important;
+}
+
+a:hover, .ctaButton:hover, .menuButton:hover {
+  color: #3B82F6 !important;
+}
+
+footer, [role="contentinfo"] {
+  h1, h2, h3, h4, h5, h6, strong, b, .bold, .wordmark, span, a, div {
+    color: var(--white) !important;
+  }
+  a:hover {
+    color: var(--white) !important;
+    text-decoration: underline;
+  }
+  [class*="ctaButton"] {
+    color: var(--black) !important;
+    span {
+      color: var(--black) !important;
+    }
+  }
+}
+
+.innerHeader .wordmark, header [class*="wordmark"] {
+  color: var(--black) !important;
+}

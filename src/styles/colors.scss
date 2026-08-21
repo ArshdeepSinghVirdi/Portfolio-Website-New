@@ -1,0 +1,16 @@
+@use 'sass:color';
+
+$colors: (
+  'white': #f0f4f1,
+  'black': #121824,
+  'menuColor': #121824,
+  'accentColor': #f9f9f9,
+  'fillColor': #dbeafe,
+  'menuFontColor': #f0f4f1,
+);
+
+html {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+}

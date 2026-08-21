@@ -1,0 +1,34 @@
+@import '@src/styles/functions';
+
+.root {
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  height: 180svh;
+  @include mobile {
+    height: 115svh;
+  }
+  .text {
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    > div {
+      perspective: 1000px;
+    }
+    .attribution {
+      margin-top: calc(var(--layout-columns-gap) * 1.5);
+      font-weight: 550;
+      opacity: 0.55;
+      perspective: none;
+      @include mobile {
+        margin-top: calc(var(--layout-columns-gap) * 1);
+      }
+    }
+  }
+}

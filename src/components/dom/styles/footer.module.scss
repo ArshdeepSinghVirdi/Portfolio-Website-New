@@ -1,0 +1,263 @@
+@import '@src/styles/functions';
+
+.root {
+  height: auto;
+  width: 100%;
+  translate: inherit !important;
+  box-shadow: none;
+  color: var(--white);
+
+  .inner {
+    padding-top: calc(var(--layout-columns-gap) * 3);
+    padding-bottom: 0;
+    @include mobile {
+      padding-top: calc(var(--layout-columns-gap) * 1.5);
+    }
+  }
+
+  div,
+  h3,
+  h4,
+  h6 {
+    color: var(--white);
+  }
+
+  .topColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: calc(var(--layout-columns-gap) * 2);
+    @include mobile {
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--layout-columns-gap) * 1.2);
+    }
+  }
+
+  .column {
+    min-width: 0;
+    .columnTitle {
+      opacity: 0.5;
+      letter-spacing: 0.12em;
+      margin-bottom: calc(var(--layout-columns-gap) * 0.7);
+    }
+  }
+
+  .workColumn {
+    @include mobile {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .ctaLabel {
+    opacity: 0.5;
+    letter-spacing: 0.12em;
+    margin-bottom: calc(var(--layout-columns-gap) * 0.3);
+  }
+
+  .ctaEmail {
+    display: inline-block;
+    font-size: clamp(1.4rem, 2.4vw, 2.6rem);
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    transition: opacity 0.3s ease;
+    > span {
+      color: var(--white);
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .linkTextContainer {
+    padding-top: calc(var(--layout-columns-gap) * 0.35);
+    @include mobile {
+      padding-top: calc(var(--layout-columns-gap) * 0.2);
+    }
+    .linkText {
+      cursor: pointer;
+      overflow: unset;
+      display: flex;
+      align-items: center;
+      position: relative;
+      > svg {
+        height: 0.75vw;
+        width: 0.75vw;
+        top: auto;
+        overflow: unset;
+        fill: var(--white);
+        stroke: var(--white);
+        @include mobile {
+          height: 2vw;
+          width: 2vw;
+          left: -2vw;
+        }
+      }
+      &:hover {
+        svg {
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.1, 1) !important;
+          transform: translate3d(1vw, 0, 0) rotate(-150deg) !important;
+          @include mobile {
+            transform: translate3d(2vw, 0, 0) rotate(-150deg) !important;
+          }
+        }
+        span {
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.1, 1) !important;
+          transform: translate3d(0.6vw, 0, 0);
+          @include mobile {
+            transform: translate3d(1.8vw, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  .metaRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: calc(var(--layout-columns-gap) * 2.5);
+    padding-top: calc(var(--layout-columns-gap) * 1.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    @include mobile {
+      flex-direction: column;
+      gap: calc(var(--layout-columns-gap) * 0.8);
+      margin-top: calc(var(--layout-columns-gap) * 1.5);
+      padding-top: calc(var(--layout-columns-gap) * 0.8);
+    }
+  }
+
+  .metaLeft,
+  .metaCenter,
+  .metaRight {
+    flex: 1;
+  }
+
+  .metaCenter {
+    text-align: center;
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  .metaRight {
+    text-align: right;
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  .metaLabel {
+    opacity: 0.55;
+    letter-spacing: 0.06em;
+    margin-bottom: calc(var(--layout-columns-gap) * 0.15);
+  }
+
+  .metaText {
+    opacity: 0.55;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+
+  .giantNameWrapper {
+    position: relative;
+    margin-top: calc(var(--layout-columns-gap) * 1.5);
+    overflow: hidden;
+    @include mobile {
+      margin-top: calc(var(--layout-columns-gap) * 1);
+    }
+  }
+
+  .giantName {
+    display: block;
+    font-family: var(--font-primary), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+      'Noto Sans SC', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 15.5vw, 22vw);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    white-space: nowrap;
+    user-select: none;
+    padding-bottom: calc(var(--layout-columns-gap) * 0.3);
+    padding-right: 0.05em; 
+    @include mobile {
+      font-size: 15vw;
+    }
+  }
+
+  .goTopOverlay {
+    position: absolute;
+    bottom: calc(var(--layout-columns-gap) * 0.8);
+    right: 0;
+    @include mobile {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: calc(var(--layout-columns-gap) * 0.5);
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.circleButton {
+  z-index: 2;
+  box-shadow:
+    0 0.32vw 0.52vw #0000000a,
+    0 0.12vw 0.22vw #0000000a;
+  @include mobile {
+    width: 10vw;
+    height: 10vw;
+  }
+  width: 2.8vw;
+  height: 2.8vw;
+  background-color: var(--white);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  .arrowClassic {
+    z-index: 2;
+    @include mobile {
+      width: 4vw;
+      height: 4vw;
+      top: 3.05vw;
+      left: 3.05vw;
+    }
+    position: absolute;
+    top: 0.85vw;
+    left: 0.85vw;
+    height: 1.1vw;
+    width: 1.1vw;
+    fill: var(--black);
+    stroke: var(--black);
+    transform: translateY(0vw) rotate(180deg);
+  }
+
+  .ball {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 40vw;
+    background-color: var(--fillColor);
+    transition:
+      width 0.6s cubic-bezier(0.4, 0, 0.1, 1),
+      height 0.6s cubic-bezier(0.4, 0, 0.1, 1);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+.circleButton:hover {
+  .ball {
+    width: 25vw;
+    height: 25vw;
+    z-index: 1;
+    @include mobile {
+      width: 80vw;
+      height: 80vw;
+    }
+  }
+}

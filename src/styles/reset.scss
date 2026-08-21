@@ -1,0 +1,38 @@
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  text-rendering: geometricPrecision; /* 2 */
+  -webkit-font-smoothing: antialiased; /* 3 */
+  -webkit-font-smoothing: subpixel-antialiased; /* 3 */
+  -moz-font-smoothing: antialiased; /* 3 */
+  font-smoothing: antialiased; /* 3 */
+  -moz-osx-font-smoothing: grayscale; /* 3 */
+}
+
+*:not(iframe, canvas, img, svg, video, svg *) {
+  all: unset;
+  display: revert;
+}
+
+*:not(svg, svg *),
+*:not(svg, svg *)::before,
+*:not(svg, svg *)::after {
+  box-sizing: border-box !important;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+textarea {
+  white-space: revert;
+}
