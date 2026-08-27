@@ -52,6 +52,14 @@ function MyApp({ Component, pageProps, router }) {
   const mainContainerRef = useRef();
   const layoutRef = useRef();
 
+  useIsomorphicLayoutEffect(() => {
+    const handleContextMenu = (e) => e.preventDefault();
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
   useFoucFix();
   useScroll(() => ScrollTrigger.update());
 
