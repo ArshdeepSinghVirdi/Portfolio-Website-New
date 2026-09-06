@@ -38,7 +38,9 @@ function Overview() {
               Bachelor of Technology (B.Tech.) in Computer Science and Engineering from SRM Institute of Science and Technology, graduating with an outstanding CGPA of 9.74.
             </h6>
             <h6 className={clsx(styles.paddingTop, 'h6')}>
-              Recently, I completed my Software Development Apprenticeship at Boeing and transitioned into a full-time Software Engineer role. During my time there, I have contributed to building scalable, high-quality software solutions while expanding my enterprise engineering expertise. Prior to this, I gained valuable industry experience through web development internships at Eshway and Whizz Communications, designing innovative and user-centric applications.
+              Recently, I completed my Software Development Apprenticeship at Boeing and transitioned into a full-time Software Engineer role. During my time there, I have contributed to building
+              scalable, high-quality software solutions while expanding my enterprise engineering expertise. Prior to this, I gained valuable industry experience through web development internships at
+              Eshway and Whizz Communications, designing innovative and user-centric applications.
             </h6>
             <h6 className={clsx(styles.paddingTop, 'h6')}>
               Driven by commitment, passion, and innovation, I enjoy solving complex problems. I have successfully designed and built projects like FinEdge, VigilVault, AI Gallery App, GPT-Teacher,
@@ -53,8 +55,8 @@ function Overview() {
               Science and Technology with a CGPA of 9.74.
             </h6>
             <h6 className={clsx(styles.paddingTop, 'h6')}>
-              Recently, I transitioned to a full-time Software Engineer at Boeing after completing my SDE Apprenticeship, where I built scalable enterprise solutions. Previously, I completed internships at Eshway and Whizz
-              Communications, designing innovative applications.
+              Recently, I transitioned to a full-time Software Engineer at Boeing after completing my SDE Apprenticeship, where I built scalable enterprise solutions. Previously, I completed
+              internships at Eshway and Whizz Communications, designing innovative applications.
             </h6>
             <h6 className={clsx(styles.paddingTop, 'h6')}>
               I have successfully designed and built projects like FinEdge, VigilVault, AI Gallery App, GPT-Teacher, and DocFlow, and my goal is to leverage software engineering and AI to build
