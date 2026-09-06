@@ -230,8 +230,8 @@ function Home() {
         </div>
         {!isMobile && (
           <h6 className={clsx('h6', styles.rightContainer)}>
-            I&apos;m Arshdeep Singh Virdi, a Software Engineer specializing in AI/ML integration and full-stack systems. I am currently working full-time at Boeing, having transitioned from an SDE Apprenticeship where I developed scalable
-            enterprise features and applications.
+            I&apos;m Arshdeep Singh Virdi, a Software Engineer specializing in AI/ML integration and full-stack systems. I am currently working full-time at Boeing, having transitioned from an SDE
+            Apprenticeship where I developed scalable enterprise features and applications.
           </h6>
         )}
       </div>
@@ -253,8 +253,8 @@ function Home() {
         <div className={styles.rightContainerMobile}>
           <h6 className="h6">
             {' '}
-            I&apos;m Arshdeep Singh Virdi, a Software Engineer specializing in AI/ML integration and full-stack systems. I am currently working full-time at Boeing, having transitioned from an SDE Apprenticeship where I developed scalable
-            enterprise features and applications.
+            I&apos;m Arshdeep Singh Virdi, a Software Engineer specializing in AI/ML integration and full-stack systems. I am currently working full-time at Boeing, having transitioned from an SDE
+            Apprenticeship where I developed scalable enterprise features and applications.
           </h6>
         </div>
       )}
