@@ -23,6 +23,7 @@ export const experience = [
 
 export const skills = [
   'C#',
+  'Java',
   'ASP.NET Core',
   'React.js',
   'Node.js',
@@ -43,14 +44,18 @@ export const skills = [
   'Scikit-learn',
   'Numpy',
   'Pandas',
-  'YOLOv8',
+  'YOLO',
   'AI/ML',
-  'System Integration Testing',
+  'Automation Testing',
+  'Azure DevOps',
   'Git/Github',
   'JIRA',
   'GSap',
   'Inngest',
   'Prisma',
+  'Arcjet',
+  'Sonarqube',
+  'Coverity',
 ];
 
 export const languages = [
